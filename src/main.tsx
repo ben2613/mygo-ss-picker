@@ -4,7 +4,7 @@ import './index.css'
 import {
   RouterProvider
 } from "react-router-dom";
-import router from './route.tsx';
+import router from './router/route.tsx';
 
 
 import { ThemeProvider } from "@material-tailwind/react";

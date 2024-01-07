@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "../App";
 import { ROUTES } from "./routerConfig";
+import List from "../pages/List/List";
 
 const router = createBrowserRouter([{
     path: ROUTES.Root,
-    element: <App />
+    element: <List />
 }]);
 
 export default router;

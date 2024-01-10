@@ -1,10 +1,13 @@
 import { ImageData } from "@/assets/imageData";
+import ImageCell from "@/components/ImageCell";
 
 
 const List = () => (
-    ImageData.map((image, idx) => (
-        !image.isDeleted && <img src={image.path} alt={image.line} key={idx} />
-    ))
+    <div className="flex flex-wrap">
+        {ImageData.map((image, idx) => (
+            !image.isDeleted && <ImageCell src={image.path} alt={image.line} key={idx} />
+        ))}
+    </div>
 );
 
 export default List;

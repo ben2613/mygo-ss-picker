@@ -5,18 +5,14 @@ import React from "react";
 interface Props {
     src: string;
     alt: string;
-    width: number;
-    height: number;
 }
 
-const Thumbnail: React.FC<Props> = ({ src, alt, width, height }) => {
+const Thumbnail: React.FC<Props> = ({ src, alt }) => {
     return (
         <img
             src={src}
             alt={alt}
-            width={width}
-            height={height}
-            style={{ objectFit: "cover" }}
+            className="w-full rounded-lg object-cover"
         />
     );
 };

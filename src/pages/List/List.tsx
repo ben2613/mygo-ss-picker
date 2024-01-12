@@ -1,6 +1,6 @@
 import { ImageData } from "@/assets/imageData";
 import ImageCell from "@/components/ImageCell";
-import { Input, Navbar, Typography } from "@material-tailwind/react";
+import { Input, Navbar } from "@material-tailwind/react";
 import { useState } from "react";
 
 

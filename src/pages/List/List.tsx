@@ -9,7 +9,7 @@ const List = () => {
     return <div className="min-h-screen">
         <Navbar className="sticky top-0 z-10 w-full max-w-full px-4 py-2">
             <div className="flex items-center justify-between">
-                <Input label="Search" placeholder="為甚麼要演奏春日影" onChange={e => {setSearch(e.target.value)}} />
+                <Input label="Search" placeholder="為什麼要演奏春日影" onChange={e => {setSearch(e.target.value)}} />
             </div>
         </Navbar>
         <div className="flex flex-wrap">

@@ -20,10 +20,10 @@ const Thumbnail: React.FC<Props> = ({ src, alt }) => {
     const onLongPress = () => {
         copyImageToClipboard(fullURL);
     }
-    const longPressEvent = useLongPress(onLongPress, {isPreventDefault: true, delay: 300});
+    const longPressEvent = useLongPress(onLongPress, {delay: 300});
     return (
         <div className="overflow-hidden rounded-lg">
-            <Link {...longPressEvent} to={"/fullscreen" + src} >
+            <Link onContextMenu={e=>e.preventDefault()} {...longPressEvent} to={"/fullscreen" + src} >
                 <img 
                     src={src}
                     alt={alt}

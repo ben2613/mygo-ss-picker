@@ -15,7 +15,7 @@ const List:React.FC<{scrollPosition: ScrollPosition}> = ({scrollPosition}) => {
         </Navbar>
         <div className="flex flex-wrap">
             {ImageData.filter(datum => datum.line.includes(search)).map((image, idx) => (
-                !image.isDeleted && <LazyLoadComponent placeholder={<div className="w-[600px] h-[200px]"></div>} key={idx} scrollPosition={scrollPosition}><ImageCell src={image.path} alt={image.line} /></LazyLoadComponent>
+                !image.isDeleted && <LazyLoadComponent placeholder={<div className="w-[100px] h-[300px]"></div>} key={idx} scrollPosition={scrollPosition}><ImageCell src={image.path} alt={image.line} /></LazyLoadComponent>
             ))}
         </div>
     </div>

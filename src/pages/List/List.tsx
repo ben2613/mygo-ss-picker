@@ -2,9 +2,9 @@ import { ImageData } from "@/assets/imageData";
 import ImageCell from "@/components/ImageCell";
 import { Input, Navbar } from "@material-tailwind/react";
 import { useState } from "react";
-import { LazyLoadComponent, ScrollPosition, trackWindowScroll } from "react-lazy-load-image-component";
+import { trackWindowScroll } from "react-lazy-load-image-component";
 
-const List:React.FC<{scrollPosition: ScrollPosition}> = ({scrollPosition}) => {
+const List = trackWindowScroll(({scrollPosition}) => {
     const [search, setSearch] = useState<string>("")
     console.log(scrollPosition)
     return <div className="min-h-screen">
@@ -15,10 +15,10 @@ const List:React.FC<{scrollPosition: ScrollPosition}> = ({scrollPosition}) => {
         </Navbar>
         <div className="flex flex-wrap">
             {ImageData.filter(datum => datum.line.includes(search)).map((image, idx) => (
-                !image.isDeleted && <LazyLoadComponent placeholder={<div className="w-[100px] h-[300px]"></div>} key={idx} scrollPosition={scrollPosition}><ImageCell src={image.path} alt={image.line} /></LazyLoadComponent>
+                !image.isDeleted && <ImageCell key={idx} src={image.path} alt={image.line} scrollPosition={scrollPosition} />
             ))}
         </div>
     </div>
-};
+});
 
-export default trackWindowScroll(List);
+export default List;
